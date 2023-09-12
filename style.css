@@ -1,0 +1,17 @@
+body{
+  background-color: #99b3da;
+  color: rgb(0, 0, 0);
+}
+
+a{
+  color: rgb(85, 0, 0);
+}
+
+footer{
+  background-color: rgb(62, 152, 255);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;  
+}
+
