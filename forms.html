@@ -16,20 +16,20 @@
     <img src="assets/best-blogging.jpg" alt="Blogging Course" width="500">
 
 
-    <form action="" >
+    <form action="thanks_page.html" >
       <fieldset>
         <legend>
           <h1>Enter your Information</h1>
         </legend>
         <div>
           <label for="inputName">Enter your Full Name:*</label>
-          <input type="text" id="inputName" placeholder="Full Name" required>
+          <input type="text" id="inputName" placeholder="Full Name" autocomplete="additional-name" required>
         </div>
 
 
         <div>
           <label for="inputAge">Enter your age:*</label>
-          <input type="number" id="inputAge" placeholder="age" required>
+          <input type="number" id="inputAge" placeholder="age" autocomplete="address-level1" required>
         </div>
 
         <!-- <fieldset> -->
@@ -42,10 +42,10 @@
 
         <div>
           <label for="inputEmail">Enter your Email:*</label>
-          <input type="email" id="inputEmail" placeholder="Email" required>
+          <input type="email" id="inputEmail" placeholder="Email" autocomplete="email" required>
         </div>
         <label for="inputCountry">Country:*</label>
-        <select name="inputCountry" id="inputCountry">
+        <select name="inputCountry" id="inputCountry" autocomplete="country" required>
           <option value="ae">United Arab Emirates</option>
           <option value="bh">Bahrain</option>
           <option value="dj">Djibouti</option>
@@ -94,9 +94,8 @@
           <input type="file" id="CV" name="CV" class="custom-file-upload" required>
         </div>
 
-        <a href="thanks_page.html">
-          <input type="submit">
-        </a>
+        
+          <input type="submit"></a>
         
       </fieldset>
 
@@ -122,6 +121,9 @@
   </a>
   <a href="https://X.com/7ussainLZ">
     X
+  </a>
+  <a href="https://www.linkedin.com/in/hussain-alzayer-673b77234/">
+    LinkedIn
   </a>
   <h2>CopyRights: Hussain*</h2>
 </footer>
