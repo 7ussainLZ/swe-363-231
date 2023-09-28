@@ -10,7 +10,7 @@ body {
  
 .loading {
   position: fixed; /* Fixed position */
-  top: 0; /* Full screen */
+  top: 0;  /*Full screen */
   right: 0;
   bottom: 0;
   left: 0;
