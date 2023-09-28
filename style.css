@@ -1,17 +1,3 @@
-.loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 body {
   font-family: "Lora", sans-serif;
   background-color: #99b3da;
@@ -19,6 +5,41 @@ body {
   height: 2165px;
   background: #FFF;
 }
+
+/* Animation */
+ 
+.loading {
+  position: fixed; /* Fixed position */
+  top: 0; /* Full screen */
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex; /* Centered layout */
+  align-items: center;
+  justify-content: center;
+  background-color: white; /* Loading background color */
+  animation: hideLoading 3s forwards 3s; /* Animation to fade out the loading div */
+  z-index: 1000; /* Place it above all other content */
+}
+
+.content {
+  opacity: 0; /* Initially hidden */
+  animation: showContent 1s forwards 2s; /* Animation to fade in the content */
+}
+
+@keyframes hideLoading {
+  to {
+      opacity: 0; /* Fade out to invisible */
+      visibility: hidden; /* Hide the loading div */
+  }
+}
+
+@keyframes showContent {
+  to {
+      opacity: 1; /* Fade in to visible */
+  }
+}
+
 
 .personal_img {
   margin-top: 33px;
