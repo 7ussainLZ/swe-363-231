@@ -13,7 +13,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      /* height: 100vh; */
     }
 
     .cell {
@@ -60,6 +60,45 @@
       background-color: #ab6e6e;
       color: #000;
     }
+    .topnav {
+      overflow: hidden;
+      width: 1152px;
+      height: 50px;
+    }
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+      float: left;
+      padding: 8px 10px;
+      text-decoration: none;
+      color: #000;
+      text-align: right;
+      font-family: Heebo;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      transition: 0.4s ease;
+
+    }
+
+    /* Change the color of links on hover */
+    .topnav a:hover {
+      /* background-color: #ddd;
+  color: black; */
+      color: #000;
+      transform: scale(1.1);
+    }
+
+    /* Add a color to the active/current link */
+    .topnav a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    a.certain_nav {
+      color: rgb(101, 1, 1);
+    }
   </style>
 </head>
 
@@ -98,7 +137,7 @@
     </div>
 
     <div class="button_div">
-      <button id="restartBtn" style="display:none;" class="restartBtn">أعد اللعب</button>
+      <button id="restartBtn"  class="restartBtn">أعد اللعب</button>
     </div>
     <script>
 
@@ -126,13 +165,11 @@
           turnLetter = document.querySelector("#turn")
           turnLetter.innerText = `! ${turn} لقد فاز`
           gameEnded = true;
-          restartBtn.style.display = 'block';
           return;
         }
         if (Array.from(document.querySelectorAll('.cell')).every(cell => cell.innerText !== '')) {
           turnLetter = document.querySelector("#turn")
           turnLetter.innerText = `!تعادل`
-          restartBtn.style.display = 'block';
           gameEnded = true;
           return;
         }
@@ -151,7 +188,6 @@
         document.querySelectorAll('.cell').forEach(cell => cell.style.backgroundColor = "beige");
         gameEnded = false;
         turn = "X";
-        restartBtn.style.display = 'none';
         document.getElementById('turn').innerHTML = "إنه دور <span>X</span>";
       }
     </script>
