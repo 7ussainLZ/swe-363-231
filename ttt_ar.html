@@ -148,9 +148,11 @@
 
       function restartGame() {
         document.querySelectorAll('.cell').forEach(cell => cell.innerText = '');
+        document.querySelectorAll('.cell').forEach(cell => cell.style.backgroundColor = "beige");
         gameEnded = false;
         turn = "X";
         restartBtn.style.display = 'none';
+        document.getElementById('turn').innerHTML = "إنه دور <span>X</span>";
       }
     </script>
   </div>
