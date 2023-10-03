@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thanks</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" media="screen and (min-width: 769px)" href="desktop.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
 
 </head>
+
 <body>
 
   <center>
-    <header>
-      <h1>Thanks for Your Time | شكرًا لوقتكم</h1>
-      <h2>You will have a Response in Your Email by Mostly 3 Days</h2>
+    <header class="p-6 max-w-md mx-auto rounded-xl shadow-md mt-24 mb-5 bg-slate-500">
+
+      <h1 class="bg-slate-300">Thanks for Your Time | شكرًا لوقتكم</h1>
+      <h2 class="bg-gray-950 text-white" >You will have a Response in Your Email by Mostly 3 Days</h2>
     </header>
 
     <main>
@@ -22,6 +36,7 @@
       </a>
     </main>
   </center>
-  
+
 </body>
+
 </html>

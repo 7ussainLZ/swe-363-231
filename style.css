@@ -7,36 +7,47 @@ body {
 }
 
 /* Animation */
- 
+
 .loading {
-  position: fixed; /* Fixed position */
-  top: 0;  /*Full screen */
+  position: fixed;
+  /* Fixed position */
+  top: 0;
+  /*Full screen */
   right: 0;
   bottom: 0;
   left: 0;
-  display: flex; /* Centered layout */
+  display: flex;
+  /* Centered layout */
   align-items: center;
   justify-content: center;
-  background-color: white; /* Loading background color */
-  animation: hideLoading 3s forwards 3s ; /* Animation to fade out the loading div */
-  z-index: 1000; /* Place it above all other content */
+  background-color: white;
+  /* Loading background color */
+  animation: hideLoading 3s forwards 3s;
+  /* Animation to fade out the loading div */
+  z-index: 1000;
+  /* Place it above all other content */
 }
 
 .content {
-  opacity: 0; /* Initially hidden */
-  animation: showContent 1s forwards 2s; /* Animation to fade in the content */
+  opacity: 0;
+  /* Initially hidden */
+  animation: showContent 1s forwards 2s;
+  /* Animation to fade in the content */
 }
 
 @keyframes hideLoading {
   to {
-      opacity: 0; /* Fade out to invisible */
-      visibility: hidden; /* Hide the loading div */
+    opacity: 0;
+    /* Fade out to invisible */
+    visibility: hidden;
+    /* Hide the loading div */
   }
 }
 
 @keyframes showContent {
   to {
-      opacity: 1; /* Fade in to visible */
+    opacity: 1;
+    /* Fade in to visible */
   }
 }
 
@@ -49,18 +60,25 @@ body {
 
 .watermarked-image {
   position: relative;
-  display: inline-block; /* or you can use 'block' depending on your layout */
+  display: inline-block;
+  /* or you can use 'block' depending on your layout */
 }
 
 .watermarked-image::after {
   content: "Hussain Courses";
   position: absolute;
-  top: 10px; /* Adjust the position of the watermark */
-  right: 10px;  /* Adjust the position of the watermark */
-  font-size: 16px; /* Adjust the font size */
-  color: rgb(255, 255, 255); /* Adjust the text color */
-  opacity: 0.7; /* Adjust the text transparency */
-  font-family: Arial, sans-serif; /* Adjust the font family */
+  top: 10px;
+  /* Adjust the position of the watermark */
+  right: 10px;
+  /* Adjust the position of the watermark */
+  font-size: 16px;
+  /* Adjust the font size */
+  color: rgb(255, 255, 255);
+  /* Adjust the text color */
+  opacity: 0.7;
+  /* Adjust the text transparency */
+  font-family: Arial, sans-serif;
+  /* Adjust the font family */
 }
 
 h1 {
@@ -79,7 +97,7 @@ h2 {
   font-size: x-large;
 }
 
-.Courses_Image:hover{
+.Courses_Image:hover {
   opacity: 0.6;
 }
 
@@ -102,14 +120,16 @@ footer {
 .footer_icon {
   margin-top: 51px;
   margin-right: 35px;
-  
+
   /* margin-left: 71px; */
 
 }
-.git_icon{
+
+.git_icon {
   margin-left: 71;
 }
-.icon_list{
+
+.icon_list {
   /* margin-top: 51;
   margin-left: 71; */
   display: flex;
@@ -119,17 +139,17 @@ footer {
   /* margin-left: 71px; */
 }
 
-.icon_list a{
+.icon_list a {
   color: #21243D;
   font-size: 30px;
   padding-right: 17.5px;
   padding-left: 17.5px;
-  
+
   /* margin-left: 35px; */
   transition: 0.4s ease;
 }
 
-.icon_list a:hover{
+.icon_list a:hover {
   /* opacity: 0.6; */
   color: #000;
   transform: scale(1.1);
@@ -138,7 +158,7 @@ footer {
 
 
 .footer_icon:hover {
- opacity: 0.6;
+  opacity: 0.6;
 }
 
 .Copyright {
@@ -177,12 +197,12 @@ footer {
   color: #000;
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
-  overflow: hidden;
-  width: 375px;
-  height: 50px;
+.Courses_Image{
+  width: 149;
 }
+
+/* Add a black background color to the top navigation */
+
 
 .menu_nav {
   display: flex;
@@ -194,19 +214,33 @@ footer {
   flex-shrink: 0;
 }
 
+.topnav {
+  overflow: hidden;
+  width: 375px;
+  height: 50px;
+}
+
 /* Style the links inside the navigation bar */
 .topnav a {
-  float: left;
-  text-align: center;
   padding: 8px 10px;
   text-decoration: none;
-  font-size: 17px;
+  color: #000;
+  text-align: right;
+  font-family: Heebo;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  transition: 0.4s ease;
+
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  /* background-color: #ddd;
+  color: black; */
+  color: #000;
+  transform: scale(1.1);
 }
 
 /* Add a color to the active/current link */
@@ -215,11 +249,9 @@ footer {
   color: white;
 }
 
-.certain_nav {
-  background-color: #ddd;
-  color: black;
+a.certain_nav {
+  color: rgb(101, 1, 1);
 }
-
 ::selection {
   background: rgba(0, 255, 174, 0.538);
 }
@@ -234,12 +266,66 @@ input {
 
 }
 
+.course_div {
+  background: #EDF7FA;
+}
+
 .name_field {
   height: 50px;
 }
 
 @media only screen and (min-width: 769px) {
 
+  body {
+    width: 1152px;
+  }
 
-  
+  .personal_img {
+    width: 243px;
+    height: 243px;
+    flex-shrink: 0;
+    border-radius: 170.859px;
+    margin-left: 106px;
+  }
+
+  h1 {
+    color: var(--Dark-Color, #21243D);
+    font-family: Heebo;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    /* 136.364% */
+    margin-bottom: 40px;
+
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-bottom: 100px;
+    justify-content: center;
+
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: normal;
+  }
+
+  footer {
+    width: 1152px;
+    height: 182px;
+  }
+  .topnav{
+    width: 1152px;
+
+  }
+
+  .Courses_Image{
+    width: 418px;
+  }
+
+
 }
