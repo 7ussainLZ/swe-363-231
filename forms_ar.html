@@ -27,13 +27,29 @@
 </head>
 
 <body>
-  <nav class="topnav">
+  <nav class="topnav" id="content">
     <a href="index_ar.html">الرئيسية</a>
     <a href="contact_ar.html">تواصل معي</a>
     <a href="forms_ar.html"  class="certain_nav">دورات</a>
     <a href="ttt_ar.html">ألعاب</a>
     <a href="forms.html">English</a>
   </nav>
+  <script>
+    window.onload = function() {
+alert("Welcome to our website! Navigate using numbers 1-5: \n1. الرئيسية\n2. تواصل معي\n3. دورات\n4. ألعاب\n5. النسخة الإنجليزية");
+
+document.addEventListener('keydown', function(event) {
+  const key = event.key; // Get the pressed key
+
+  // Navigate according to the pressed number
+  if (key === "1") window.location.href = 'index_ar.html';
+  else if (key === "2") window.location.href = 'contact_ar.html';
+  else if (key === "3") window.location.href = 'forms_ar.html';
+  else if (key === "4") window.location.href = 'ttt_ar.html';
+  else if (key === "5") window.location.href = 'forms.html';
+});
+}
+  </script>
 
   <!-- <a href="index.html"><img src="assets/icons8-back-64.png" alt="Back Button" width="30"></a> -->
   <center>

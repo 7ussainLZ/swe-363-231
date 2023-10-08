@@ -38,7 +38,7 @@
       <i class="fa-solid fa-blog fa-beat-fade"></i>
     </center>
   </div>
-  <div class="content">
+  <div class="content" id="content">
     <nav class="topnav">
       <a href="index.html" class="certain_nav">Home</a>
       <a href="contact.html">Contact Me</a>
@@ -46,6 +46,22 @@
       <a href="ttt.html">mini-Games</a>
       <a href="index_ar.html">عربي</a>
     </nav>
+    <script>
+      window.onload = function() {
+  alert("Welcome to our website! Navigate using numbers 1-5: \n1. Home\n2. Contact Me\n3. Courses\n4. mini-Games\n5. Arabic Version");
+
+  document.addEventListener('keydown', function(event) {
+    const key = event.key; // Get the pressed key
+
+    // Navigate according to the pressed number
+    if (key === "1") window.location.href = 'index.html';
+    else if (key === "2") window.location.href = 'contact.html';
+    else if (key === "3") window.location.href = 'forms.html';
+    else if (key === "4") window.location.href = 'ttt.html';
+    else if (key === "5") window.location.href = 'index_ar.html';
+  });
+}
+    </script>
     <center>
       <main>
 
@@ -75,6 +91,18 @@
           </a>
         </div>
 
+        <div class="scroll-container" id="scroll-container">
+          <div class="scroll-container-item">
+            <h2 class="sc-item-title">
+              Blog Title
+            </h2>
+            <p class="sc-item-date">1 Oct 2023</p>
+            <p class="sc-item-text">ssss swss ssss sss 
+              ss sss sss sss sss sss sss sss sss ss ss ss</p>
+          </div>
+          
+        </div>
+        
       </main>
 
     </center>
@@ -98,6 +126,8 @@
     </footer>
 
   </div>
+
+  <script src="script.js"></script>
 </body>
 
 

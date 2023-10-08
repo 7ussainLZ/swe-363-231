@@ -23,7 +23,7 @@
 </head>
 
 <body>
-  <nav class="topnav">
+  <nav class="topnav" id="content">
     <a href="index.html" >Home</a>
     <a href="contact.html" class="certain_nav">Contact Me</a>
     <a href="forms.html">Courses</a>
@@ -32,7 +32,22 @@
 
     <!-- <img src="assets/menu.svg" alt="menu" class="menu_nav"> -->
   </nav>
+  <script>
+    window.onload = function() {
+alert("Welcome to our website! Navigate using numbers 1-5: \n1. Home\n2. Contact Me\n3. Courses\n4. mini-Games\n5. Arabic Version");
 
+document.addEventListener('keydown', function(event) {
+  const key = event.key; // Get the pressed key
+
+  // Navigate according to the pressed number
+  if (key === "1") window.location.href = 'index.html';
+  else if (key === "2") window.location.href = 'contact.html';
+  else if (key === "3") window.location.href = 'forms.html';
+  else if (key === "4") window.location.href = 'ttt.html';
+  else if (key === "5") window.location.href = 'contact_ar.html';
+});
+}
+  </script>
   <!-- <a href="index.html"><img src="assets/icons8-back-64.png" alt="Back Button" width="30"></a> -->
   <center>
     <h1>Hussain Lutfi Alzayer</h1>

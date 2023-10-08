@@ -126,14 +126,58 @@
 
 <body>
 
-  <nav class="topnav">
+  <nav class="topnav" >
     <a href="index.html">Home</a>
     <a href="contact.html">Contact Me</a>
     <a href="forms.html">Courses</a>
     <a href="ttt.html" class="certain_nav">mini-Games</a>
     <a href="ttt_ar.html">عربي</a>
   </nav>
+  <script>
+    window.onload = function() {
+`alert("Welcome to our website! Navigate using numbers 1-5: \n1. Home\n2. Contact Me\n3. Courses\n4. mini-Games\n5. Arabic Version");
 
+document.addEventListener('keydown', function(event) {
+  const key = event.key; // Get the pressed key
+
+  // Navigate according to the pressed number
+  if (key === "1") window.location.href = 'index.html';
+  else if (key === "2") window.location.href = 'contact.html';
+  else if (key === "3") window.location.href = 'forms.html';
+  else if (key === "4") window.location.href = 'ttt.html';
+  else if (key === "5") window.location.href = 'ttt_ar.html';
+});`
+
+alert("Welcome to Tic-Tac-Toe! Select cells using numbers 1-9. Press 0 to restart the game.");
+
+  document.addEventListener('keydown', function(event) {
+    const key = event.key; // Get the pressed key
+
+    // Get all cells
+    const cells = document.querySelectorAll('.cell');
+
+    // Handle cell selection
+    if (key >= "1" && key <= "9") {
+      const selectedCell = cells[key - 1];
+      
+      // You might need to call your game's function to handle cell click here
+      // For example, if you have a function handleCellClick(cell), you might call it like this:
+      // handleCellClick(selectedCell);
+      
+      selectedCell.click(); // This line simulates a click on the selected cell. Adjust it to fit your game's logic.
+    } else if (key === "0") {
+      // Handle game restart
+      const restartBtn = document.getElementById('restartBtn');
+      
+      // You might need to call your game's function to handle restart here
+      // For example, if you have a function handleRestart(), you might call it like this:
+      // handleRestart();
+      
+      restartBtn.click(); // This line simulates a click on the restart button. Adjust it to fit your game's logic.
+    }
+  });
+}
+  </script>
 
 
   <h1 id="turn">
