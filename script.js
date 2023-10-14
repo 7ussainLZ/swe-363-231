@@ -84,3 +84,21 @@ window.onload = function() {
     else if (key === "5") window.location.href = 'index_ar.html';
   });
 }
+
+
+async function loadAyah() {
+  fetch('https://api.quran.com/api/v4/quran/verses/uthmani')
+    .then(response => response.json())  // parse the response as JSON
+    .then(data => {
+      // number of verses
+      let randomAyah =  Math.floor(Math.random() * data.verses.length);
+      // Getting the random verse and assigning it
+      document.getElementById("ayah").innerHTML = data.verses[randomAyah].text_uthmani
+
+    })
+    .catch(error => {
+      console.error('There was an error fetching the data:', error);
+    });
+}
+
+loadAyah();

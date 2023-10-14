@@ -274,6 +274,10 @@ input {
   height: 50px;
 }
 
+.ayah{
+  font-size: 25px;
+}
+
 .scroll-container {
   margin-top: 60px;
   width: 100%; /* or any specific width */
