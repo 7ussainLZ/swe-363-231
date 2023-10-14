@@ -141,6 +141,17 @@ document.addEventListener('keydown', function(event) {
           <label for="CV">أدرج السيرة الشخصية:*</label>
           <input type="file" id="CV" name="CV" class="custom-file-upload" required>
         </div>
+
+        <div>
+          <div class="toolbar">
+            <label for="myCanvas">وقع هنا</label>
+            <button>مسح</button>
+        </div>
+          
+          <canvas class="myCanvas">
+            <p>Add signature here.</p>
+        </canvas>
+        </div>
         <br>
 
 
@@ -155,6 +166,8 @@ document.addEventListener('keydown', function(event) {
     </datalist>
     <input type="submit" name="button" value="Send"> -->
   </center>
+  <script src="canvas.js"></script>
+
 </body>
 
 <footer>

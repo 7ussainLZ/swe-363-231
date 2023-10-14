@@ -302,6 +302,11 @@ input {
     font-size: 25px;
 }
 
+.myCanvas{
+  width: 350px;
+  height: 100px;
+}
+
 
 @media only screen and (min-width: 769px) {
 
