@@ -102,3 +102,67 @@ async function loadAyah() {
 }
 
 loadAyah();
+
+let timeout;
+const inactivityTime = 60000; // 1 minute
+const screensaver = document.getElementById('screensaver');
+
+// Initialize Three.js scene for the screensaver
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ antialias: true, shadowMapEnabled: true }); 
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.shadowMap.enabled = true; 
+renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Use PCFSoftShadowMap for softer shadows
+screensaver.appendChild(renderer.domElement);
+
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshStandardMaterial({ color: 0xD3D3D3 }); 
+const cube = new THREE.Mesh(geometry, material);
+cube.castShadow = true; 
+cube.receiveShadow = true; 
+scene.add(cube);
+
+// Add a directional light to the scene
+const light = new THREE.DirectionalLight(0xFFFFFF, 1.5); // Increased intensity
+light.position.set(1, 1, 1);
+light.castShadow = true; 
+light.shadow.bias = -0.001; 
+light.shadow.mapSize.width = 2048; 
+light.shadow.mapSize.height = 2048; 
+scene.add(light);
+
+// Add ambient light to the scene
+const ambientLight = new THREE.AmbientLight(0x999999, 0.5); // 0.5 intensity
+scene.add(ambientLight);
+
+camera.position.z = 5;
+
+function animate() {
+    requestAnimationFrame(animate);
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+    renderer.render(scene, camera);
+}
+animate();
+
+// Reset the inactivity timer on user interaction
+function resetTimer() {
+    clearTimeout(timeout);
+    screensaver.style.display = 'none';
+    timeout = setTimeout(showScreensaver, inactivityTime);
+}
+
+// Show the screensaver after inactivity
+function showScreensaver() {
+    screensaver.style.display = 'block';
+}
+
+// Event listeners to detect user activity
+document.addEventListener('mousemove', resetTimer);
+document.addEventListener('mousedown', resetTimer);
+document.addEventListener('keypress', resetTimer);
+document.addEventListener('touchmove', resetTimer);
+
+// Start the inactivity timer
+resetTimer();
