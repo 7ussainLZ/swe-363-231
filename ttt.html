@@ -135,18 +135,6 @@
   </nav>
   <script>
     window.onload = function() {
-`alert("Welcome to our website! Navigate using numbers 1-5: \n1. Home\n2. Contact Me\n3. Courses\n4. mini-Games\n5. Arabic Version");
-
-document.addEventListener('keydown', function(event) {
-  const key = event.key; // Get the pressed key
-
-  // Navigate according to the pressed number
-  if (key === "1") window.location.href = 'index.html';
-  else if (key === "2") window.location.href = 'contact.html';
-  else if (key === "3") window.location.href = 'forms.html';
-  else if (key === "4") window.location.href = 'ttt.html';
-  else if (key === "5") window.location.href = 'ttt_ar.html';
-});`
 
 alert("Welcome to Tic-Tac-Toe! Select cells using numbers 1-9. Press 0 to restart the game.");
 
@@ -224,24 +212,10 @@ alert("Welcome to Tic-Tac-Toe! Select cells using numbers 1-9. Press 0 to restar
 
       function cellClicked(event) {
         let cell = event.target;
-        if (!cell.classList.contains('cell') || cell.innerText === "X" || cell.innerText === "O" || gameEnded) return;
-        cell.innerText = turn;
-        cell.style.backgroundColor = "rgb(250, 250, 212)";
-        if (checkWinner(turn)) {
-          turnLetter = document.querySelector("#turn")
-          turnLetter.innerText = `${turn} Wins!`
-          gameEnded = true;
-          return;
-        }
-        if (Array.from(document.querySelectorAll('.cell')).every(cell => cell.innerText !== '')) {
-          turnLetter = document.querySelector("#turn")
-          turnLetter.innerText = `Draw!`
-          gameEnded = true;
-          return;
-        }
-        turn = turn === "X" ? "O" : "X";
-        turnLetter = document.querySelector("#turn span")
-        turnLetter.innerText = turn
+        if (checkCell(cell)) return;
+        assignCell(cell)
+        isWinOrDraw();
+        switchTurn();
       }
 
       function checkWinner(player) {
@@ -249,13 +223,73 @@ alert("Welcome to Tic-Tac-Toe! Select cells using numbers 1-9. Press 0 to restar
         return winningConditions.some(condition => condition.every(idx => board[idx] === player));
       }
 
+      
+
+      //=========Js4 Ex2===========
+
+      function switchTurn(){
+        turn = turn === "X" ? "O" : "X";
+        turnLetter = document.querySelector("#turn span")
+        turnLetter.innerText = turn
+      }
+
+      function assignCell(cell){
+        cell.innerText = turn;
+        cell.style.backgroundColor = "rgb(250, 250, 212)";
+      }
+
+      function isWinOrDraw(){
+        if (checkWinner(turn)) {
+          toWin();
+          return;
+        }
+        if (isDraw()) {
+          toDraw();
+          return;
+        }
+      }
+
+      function checkCell(cell){
+        return (!cell.classList.contains('cell') || cell.innerText === "X" || cell.innerText === "O" || gameEnded);
+      }
+
+      function toWin(){
+        turnLetter = document.querySelector("#turn")
+          turnLetter.innerText = `${turn} Wins!`
+          gameEnded = true;
+      }
+
+      function isDraw(){
+        return Array.from(document.querySelectorAll('.cell')).every(cell => cell.innerText !== '')
+      }
+
+      function toDraw(){
+        turnLetter = document.querySelector("#turn")
+          turnLetter.innerText = `Draw!`
+          gameEnded = true;
+      }
+
+      function resetCells(){
+        document.querySelectorAll('.cell').forEach(cell => {
+          cell.innerText = '';
+          cell.style.backgroundColor = "beige"
+        });
+      }
+
       function restartGame() {
-        document.querySelectorAll('.cell').forEach(cell => cell.innerText = '');
-        document.querySelectorAll('.cell').forEach(cell => cell.style.backgroundColor = "beige");
+        resetCells();
+        resetData();
+      }
+
+      function resetData(){
         gameEnded = false;
         turn = "X";
         document.getElementById('turn').innerHTML = "Now it's is <span>X</span> turn";
       }
+
+      
+
+
     </script>
   </div>
 </body>
