@@ -27,6 +27,12 @@
 
     <script src="https://threejs.org/build/three.js"></script>
 
+    <!-- React js CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js" type="text/babel"></script>
+
 
     <style>
       .topnav a{
@@ -98,7 +104,7 @@
 
        
 
-        <div class="scroll-container" id="scroll-container">
+        <!-- <div class="scroll-container" id="scroll-container">
           <div class="scroll-container-item">
             <h2 class="sc-item-title">
               Blog Title
@@ -108,8 +114,10 @@
               ss sss sss sss sss sss sss sss sss ss ss ss</p>
           </div>
           
-        </div>
-        
+        </div> -->
+        <div id="root"></div>
+
+
       </main>
 
     </center>
@@ -138,7 +146,13 @@
     <canvas id="canvas"></canvas>
   </div> -->
 
-  <script src="script.js"></script>
+  <script src="script.js" type="text/babel"></script>
+  <script type="text/babel">
+    ReactDOM.render(
+      <BlogList blogs={blogs} />,
+      document.getElementById('root')
+    );
+  </script>
   <!-- <script src="Three.js"></script> -->
 </body>
 
