@@ -62,22 +62,22 @@ let blogs = [
   )
 ];
 
+
 function fillScrollContainer() {
-  document.getElementById("scroll-container").innerHTML = "";
-
-  for (let blog of blogs) {
-    let container = `
+  
+  const containers = blogs.map(blog => ` 
     <div class="scroll-container-item">
-            <h2 class="sc-item-title">${blog.title}</h2>
-            <p class="sc-item-date">${blog.date}</p>
-            <p class="sc-item-text">${blog.intro}</p>
-          </div>`;
+      <h2 class="sc-item-title">${blog.title}</h2>
+      <p class="sc-item-date">${blog.date}</p>
+      <p class="sc-item-text">${blog.intro}</p>
+    </div>
+  `).join('');  // JS4 Ex3
 
-    document.getElementById("scroll-container").innerHTML += container;
-  }
+  document.getElementById("scroll-container").innerHTML = containers;
 }
 
 fillScrollContainer();
+
 
 window.onload = function() {
   alert("Welcome to our website! Navigate using numbers 1-5: \n1. Home\n2. Contact Me\n3. Courses\n4. mini-Games\n5. Arabic Version");
