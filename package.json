@@ -1,10 +1,18 @@
 {
   "dependencies": {
     "body-parser": "^1.20.2",
+    "crypto": "^1.0.1",
     "express": "^4.18.2",
     "http-server": "^14.1.1"
   },
   "scripts": {
     "start": "node express.js"
-  }
+  },
+  "name": "swe-363-231",
+  "description": "",
+  "version": "1.0.0",
+  "main": "canvas.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
